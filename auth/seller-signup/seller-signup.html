@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./seller-signup.css" />
+    <title>LocalKart - Seller Signup</title>
+  </head>
+  <body>
+    <div class="signup-container">
+      <div class="left-image-section">
+        <img
+          src="../../assets/images/seller-login-signup-img.png"
+          alt="LocalKart Seller Illustration"
+        />
+      </div>
+
+      <div class="right-form-section">
+        <h2 class="form-heading">Join LocalKart as a Seller</h2>
+        <p class="form-subtext">
+          Create an account to start selling your products on LocalKart
+        </p>
+
+        <form id="seller-signup-form">
+          <label for="seller-name">Store Name</label>
+          <input type="text" id="seller-name" name="seller-name" required />
+
+          <label for="seller-email">Email</label>
+          <input type="email" id="seller-email" name="seller-email" required />
+
+          <label for="seller-password">Password</label>
+          <input
+            type="password"
+            id="seller-password"
+            name="seller-password"
+            required
+          />
+
+          <p class="error-message" id="error-message" style="display: none"></p>
+
+          <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+
+        <p class="login-redirect">
+          Already have an account?
+          <a href="../seller-login/seller-login.html">Login as a Seller</a>
+        </p>
+      </div>
+    </div>
+    <script type="module" src="./seller-signup.js"></script>
+  </body>
+</html>
