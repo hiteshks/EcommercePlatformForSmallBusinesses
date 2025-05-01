@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.brand-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 15px;
+  font-size: 14px;
+}
+.navbar-left > img {
+  width: 32px;
+  display: block;
+}
+
+a:hover {
+  color: #007bff;
+}
+
+/* Header and Nav Styling */
+header {
+  background-color: #f1f3f5;
+}
+
+nav {
+  background-color: #ffffff;
+  padding: 0px;
+}
+
+/* Top Utility Bar */
+.top-bar {
+  background-color: #ffffff;
+  padding: 8px 128px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* Main Navbar */
+.main-navbar {
+  padding: 15px 128px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 24px;
+  column-gap: 32px;
+}
+
+/* Ensure flex groups have spacing */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Center section should expand */
+.navbar-center {
+  flex: 1;
+  justify-content: center;
+  gap: 32px;
+}
+
+/* Search Bar Wrapper */
+.search-bar-wrapper {
+  display: flex;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Category dropdown */
+.category-select {
+  padding: 12px;
+  border: none;
+  background-color: #f1f1f1;
+  font-size: 14px;
+  outline: none;
+}
+/* Search input */
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Search icon */
+.search-icon {
+  background-color: white;
+  padding: 0 16px;
+  border: none;
+  color: #adb5bd;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 400px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login-btn {
+  padding: 6px 12px;
+  border: 1px solid #fb8500;
+  font-weight: bold;
+  border-radius: 6px;
+  background-color: #fb8500;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background-color: #ee7f00;
+  color: white;
+}
+#about-us-btn,
+#promo-btn,
+#blogs-btn,
+#blogs-btn,
+#download-app-btn {
+  text-decoration: none;
+  color: #6c757d;
+}
+#signup-btn {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #ffb703;
+  color: #ffffff;
+  padding: 6px 12px;
+  border: 1px solid #ffb703;
+  border-radius: 6px;
+}
+#signup-btn:hover {
+  background-color: #f5af00;
+  color: white;
+}
+#seller-login-btn {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #495057;
+  padding: 6px 12px;
+  border: 1px solid #adb5bd;
+  border-radius: 6px;
+}
+#seller-login-btn:hover {
+  background-color: #126782;
+  color: #ffffff;
+}
+#cart-btn {
+  text-decoration: none;
+  color: #6c757d;
+}
+#cart-btn:hover {
+  color: #219ebc;
+}
+#favorite-btn {
+  text-decoration: none;
+  color: #6c757d;
+}
+#favorite-btn:hover {
+  color: #ea526f;
+}
