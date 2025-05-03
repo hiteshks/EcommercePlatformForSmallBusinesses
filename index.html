@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playball&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,1,0"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>LocalKart | Your Local Shopping Platform</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- Top Row (Utility Bar) -->
+        <div class="top-bar">
+          <div class="top-left">
+            <a href="#" id="download-app-btn">📲 Download LocalCart App</a>
+          </div>
+          <div class="top-right">
+            <a href="#" id="about-us-btn">About Us</a>
+            <a href="#" id="promo-btn">Promo</a>
+            <a href="#" id="blogs-btn">Blogs</a>
+            <a href="#" id="customer-support-btn">Customer Support</a>
+            <a href="../auth/seller/seller-login.html" id="seller-login-btn"
+              >Become a Seller</a
+            >
+          </div>
+        </div>
+
+        <!-- Main Navbar -->
+        <div class="main-navbar">
+          <div class="navbar-left">
+            <img
+              src="../assets/icons/localkart-logo.png"
+              alt="LocalKart Logo"
+            />
+            <h3 class="brand-name">LOCALKART</h3>
+          </div>
+
+          <div class="navbar-center">
+            <div class="search-bar-wrapper">
+              <select class="category-select">
+                <option value="All Categories">All Categories</option>
+                <option value="Men's Clothing">Men's Clothing</option>
+                <option value="Women's Clothing">Women's Clothing</option>
+                <option value="Bath and Body">Bath and Body</option>
+                <option value="Skin Care">Skin Care</option>
+                <option value="Oral Care">Oral Care</option>
+                <option value="Snacks & Packaged Foods">
+                  Snacks & Packaged Foods
+                </option>
+                <option value="Spices & Condiments">Spices & Condiments</option>
+                <option value="Grains & Pulses">Grains & Pulses</option>
+              </select>
+              <input
+                type="text"
+                placeholder="Search for products or brand here..."
+                class="search-input"
+              />
+              <button class="search-icon">
+                <span class="material-symbols-outlined"> search </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="navbar-right">
+            <a href="#" id="cart-btn" title="Shopping Cart"
+              ><span class="material-symbols-outlined"> shopping_cart </span></a
+            >
+            <a href="#" id="favorite-btn"
+              ><span class="material-symbols-outlined"> favorite </span></a
+            >
+            <!-- Visible only when NOT logged in -->
+            <div id="guest-buttons">
+              <a href="../auth/user/user-signup.html" id="signup-btn"
+                >Sign Up</a
+              >
+              <a href="../auth/user/user-login.html" class="login-btn">Login</a>
+            </div>
+
+            <!-- Hamburger menu - Visible only when LOGGED IN -->
+            <div id="user-menu" class="hidden">
+              <button id="hamburger-btn">
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+
+              <!-- Move dropdown here -->
+              <div id="dropdown-menu" class="dropdown hidden">
+                <a href="#">👤 My Account</a>
+                <a href="#">📦 Orders</a>
+                <a href="#">💳 Payment Methods</a>
+                <a href="#">🏠 Addresses</a>
+                <hr />
+                <a href="#" id="logout-btn">🚪 Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Main Carousel -->
+      <section class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-track">
+            <img
+              src="../assets/images/main-banner-imgs/main-banner-1.png"
+              class="carousel-image"
+              alt="Slide 1"
+            />
+            <img
+              src="../assets/images/main-banner-imgs/main-banner-2.png"
+              class="carousel-image"
+              alt="Slide 2"
+            />
+            <img
+              src="../assets/images/main-banner-imgs/main-banner-3.png"
+              class="carousel-image"
+              alt="Slide 3"
+            />
+            <img
+              src="../assets/images/main-banner-imgs/main-banner-4.png"
+              class="carousel-image"
+              alt="Slide 4"
+            />
+            <img
+              src="../assets/images/main-banner-imgs/main-banner-5.png"
+              class="carousel-image"
+              alt="Slide 5"
+            />
+            <img
+              src="../assets/images/main-banner-imgs/main-banner-6.png"
+              class="carousel-image"
+              alt="Slide 6"
+            />
+            <img
+              src="../assets/images/main-banner-imgs/main-banner-7.png"
+              class="carousel-image"
+              alt="Slide 7"
+            />
+          </div>
+          <button class="carousel-btn prev">&#10094;</button>
+          <button class="carousel-btn next">&#10095;</button>
+          <div class="carousel-indicators"></div>
+        </div>
+      </section>
+
+      <!-- Categories Section -->
+      <section class="category-section">
+        <h2 class="category-heading">Shop by Category</h2>
+        <div class="category-container">
+          <!-- Repeat this block for each category -->
+          <div class="category-item">
+            <div class="category-circle">
+              <img
+                src="../assets/images/categories-imgs/cat-mens-clothing.png"
+                alt="Men's Clothing"
+              />
+            </div>
+            <p class="category-name">Men's Clothing</p>
+          </div>
+
+          <div class="category-item">
+            <div class="category-circle">
+              <img
+                src="../assets/images/categories-imgs/cat-womens-clothing.png"
+                alt="Personal Care"
+              />
+            </div>
+            <p class="category-name">Women's Clothing</p>
+          </div>
+
+          <div class="category-item">
+            <div class="category-circle">
+              <img
+                src="../assets/images/categories-imgs/cat-bath-and-body.jpg"
+                alt="Personal Care"
+              />
+            </div>
+            <p class="category-name">Bath and Body</p>
+          </div>
+
+          <div class="category-item">
+            <div class="category-circle">
+              <img
+                src="../assets/images/categories-imgs/cat-skin-care.jpg"
+                alt="Personal Care"
+              />
+            </div>
+            <p class="category-name">Skin Care</p>
+          </div>
+
+          <div class="category-item">
+            <div class="category-circle">
+              <img
+                src="../assets/images/categories-imgs/cat-oral-care.jpg"
+                alt="Personal Care"
+              />
+            </div>
+            <p class="category-name">Oral Care</p>
+          </div>
+
+          <div class="category-item">
+            <div class="category-circle">
+              <img
+                src="../assets/images/categories-imgs/cat-snacks-and-packedfoods.jpg"
+                alt="Personal Care"
+              />
+            </div>
+            <p class="category-name">Snacks & Packaged Foods</p>
+          </div>
+
+          <div class="category-item">
+            <div class="category-circle">
+              <img
+                src="../assets/images/categories-imgs/cat-spices-and-condiments.jpg"
+                alt="Personal Care"
+              />
+            </div>
+            <p class="category-name">Spices & Condiments</p>
+          </div>
+
+          <div class="category-item">
+            <div class="category-circle">
+              <img
+                src="../assets/images/categories-imgs/cat-grains-and-pulses.jpg"
+                alt="Personal Care"
+              />
+            </div>
+            <p class="category-name">Grains & Pulses</p>
+          </div>
+
+          <div class="category-item">
+            <div class="category-circle">
+              <img
+                src="../assets/images/categories-imgs/cat-pet-food.jpg"
+                alt="Personal Care"
+              />
+            </div>
+            <p class="category-name">Pet Food</p>
+          </div>
+
+          <!-- Add 7 more similar items -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Hamburger menu - Visible only when LOGGED IN -->
+    <div id="dropdown-menu" class="dropdown hidden">
+      <a href="#">👤 My Account</a>
+      <a href="#">📦 Orders</a>
+      <a href="#">💳 Payment Methods</a>
+      <a href="#">🏠 Addresses</a>
+      <hr />
+      <a href="#" id="logout-btn">🚪 Logout</a>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

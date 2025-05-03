@@ -22,7 +22,7 @@ loginForm.addEventListener("submit", async (e) => {
 
     // If successful, redirect to user dashboard
 
-    window.location.href = "../../pages/user/user-dashboard.html";
+    window.location.href = "../../index.html";
   } catch (error) {
     // Handle login errors
     let message = "Login failed. Please try again.";
