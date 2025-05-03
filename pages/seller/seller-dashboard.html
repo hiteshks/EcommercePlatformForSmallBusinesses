@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/2777f22817.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./seller-dashboard.css" />
+    <title>Seller Dashboard - LocalKart</title>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-brand-div">
+          <img
+            src="../../assets/icons/localkart-logo.png"
+            alt="LocalKart Logo"
+          />
+          <h3 class="brand-name">LOCALKART</h3>
+        </div>
+        <nav>
+          <ul>
+            <li onclick="showSection('overview')" class="active">Dashboard</li>
+            <li onclick="showSection('products')">My Products</li>
+            <li onclick="showSection('add-product')">Add Product</li>
+            <li onclick="showSection('orders')">Orders</li>
+          </ul>
+        </nav>
+        <button class="logout-btn" onclick="showLogoutPopup()">Logout</button>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <header class="topbar">
+          <span id="welcomeUser">Welcome, Seller</span>
+        </header>
+
+        <section id="overview" class="section">Dashboard Overview</section>
+
+        <!-- Product Section -->
+        <section id="products" class="section" style="display: none">
+          <p style="color: #219ebc; font-size: 14px; margin-bottom: 16px">
+            My Products
+          </p>
+          <h2 style="color: #126782; font-size: 20px; margin-bottom: 24px">
+            Inventory
+          </h2>
+          <!-- Search/Filter Bar -->
+          <div class="product-search-bar">
+            <h4 class="search-heading">Search and Filter Products</h4>
+            <input type="text" id="searchName" placeholder="By Name" />
+            <input type="text" id="searchBrand" placeholder="By Brand" />
+            <input type="text" id="searchCategory" placeholder="By Category" />
+            <input
+              type="text"
+              id="searchSubcategory"
+              placeholder="By Subcategory"
+            />
+            <input type="number" id="minPrice" placeholder="Min Price" />
+            <input type="number" id="maxPrice" placeholder="Max Price" />
+            <button class="search-btn" onclick="filterProducts()">Apply</button>
+            <button class="reset-btn" onclick="resetFilters()">Reset</button>
+          </div>
+
+          <!-- Product Table -->
+          <table class="product-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Subcategory</th>
+                <th>Price</th>
+                <th>Unit</th>
+                <th>Stock</th>
+                <th>Location</th>
+                <th>Created</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+          </table>
+
+          <!-- Image URL Edit Modal -->
+          <div
+            class="modal-overlay"
+            id="imageModalOverlay"
+            style="display: none"
+          >
+            <div class="modal-box" style="max-width: 400px; padding: 20px">
+              <h3 style="margin-bottom: 10px">Update Product Image</h3>
+              <img
+                id="oldImagePreview"
+                src=""
+                alt="Old Image"
+                style="
+                  width: 100%;
+                  height: 200px;
+                  object-fit: contain;
+                  border: 1px solid #ccc;
+                  margin-bottom: 10px;
+                "
+              />
+              <label for="newImageUrlInput">Enter new image URL:</label>
+              <input
+                type="text"
+                id="newImageUrlInput"
+                style="width: 100%; margin-bottom: 10px"
+              />
+              <div
+                style="display: none; margin-bottom: 10px"
+                id="newImagePreviewWrapper"
+              >
+                <p>Preview:</p>
+                <img
+                  id="newImagePreview"
+                  src=""
+                  style="
+                    width: 100%;
+                    height: 200px;
+                    object-fit: contain;
+                    border: 1px solid #ccc;
+                  "
+                />
+              </div>
+              <div class="modal-actions">
+                <button id="cancelImageEditBtn">Cancel</button>
+                <button id="updateImageUrlBtn">Update</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="orders" class="section" style="display: none">
+          Order List
+        </section>
+
+        <!-- Add Product Section -->
+        <section id="add-product" class="section" style="display: none">
+          <p style="color: #219ebc; font-size: 14px; margin-bottom: 16px">
+            Add Product
+          </p>
+          <h2 style="color: #126782; font-size: 20px; margin-bottom: 24px">
+            Fill New Product Details
+          </h2>
+          <hr style="border: 1px solid #f8f9fa; margin-bottom: 24px" />
+
+          <form id="addProductForm" class="product-form">
+            <div class="form-group">
+              <label for="name">Product Name</label>
+              <input type="text" id="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="price">Price (₹)</label>
+              <input type="number" id="price" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" class="form-control" required>
+                  <option value="">Select Category</option>
+                  <option value="Grocery & Essentials">
+                    Grocery & Essentials
+                  </option>
+                  <option value="Personal Care">Personal Care</option>
+                  <option value="Clothing & Accessories">
+                    Clothing & Accessories
+                  </option>
+                  <option value="Home & Kitchen">Home & Kitchen</option>
+                  <option value="Pet Supplies">Pet Supplies</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="subcategory">Subcategory</label>
+                <select id="subcategory" class="form-control" required>
+                  <option value="">Select Subcategory</option>
+                  <option value="Grains & Pulses">Grains & Pulses</option>
+                  <option value="Spices & Condiments">
+                    Spices & Condiments
+                  </option>
+                  <option value="Oils & Ghee">Oils & Ghee</option>
+                  <option value="Snacks & Packaged Foods">
+                    Snacks & Packaged Foods
+                  </option>
+                  <option value="Bath & Body">Bath & Body</option>
+                  <option value="Oral Care">Oral Care</option>
+                  <option value="Skin Care">Skin Care</option>
+                  <option value="Men's Clothing">Men's Clothing</option>
+                  <option value="Women's Clothing">Women's Clothing</option>
+                  <option value="Pet Food">Pet Food</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="brand">Brand</label>
+              <input type="text" id="brand" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="unit">Unit</label>
+                <input
+                  type="text"
+                  id="unit"
+                  placeholder="e.g. 1L, 500g"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" id="stock" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="imageUrl">Image URL</label>
+              <input type="url" id="imageUrl" required />
+            </div>
+
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" id="location" required />
+            </div>
+
+            <hr style="border: 1px solid #f8f9fa; margin: 12px 8px 0px" />
+
+            <div class="form-wrapper">
+              <div class="form-actions">
+                <button type="reset" class="reset-btn">Reset</button>
+                <button type="submit" class="submit-btn">Add Product</button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <!-- Logout Confirmation Overlay form SideBar -->
+    <div class="logout-overlay" id="logoutOverlay">
+      <div class="logout-modal">
+        <p>Are you sure you want to logout?</p>
+        <div class="logout-actions">
+          <button class="cancel-btn" onclick="hideLogoutPopup()">Cancel</button>
+          <button class="confirm-logout-btn" onclick="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Product Confirmation Modals from products Section -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box" id="confirmationModal">
+        <p id="modalMessage">Are you sure?</p>
+        <div class="modal-actions">
+          <button id="cancelModalBtn">Cancel</button>
+          <button id="confirmModalBtn">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./seller-dashboard.js"></script>
+  </body>
+</html>
