@@ -474,3 +474,39 @@ function toggleCartButtonColor(hasItems) {
     cartBtn.style.color = ""; // Or use the original color you prefer
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  //fetching user wishlist from session storage if available
+  let userWishlistFromSession =
+    JSON.parse(sessionStorage.getItem("userWishlist")) || [];
+  console.log("user wishlist from session storage", userWishlistFromSession);
+
+  if (userWishlistFromSession) {
+    showFavoritesOnly = true;
+    // Toggle button color
+
+    document.getElementById("favorite-btn").style.color = showFavoritesOnly
+      ? "#ea526f"
+      : "";
+
+    // Filter and render products
+    if (showFavoritesOnly) {
+      performSearch("All Categories", "").then(() => {
+        console.log(
+          "filtered products after perforem search",
+          filteredProducts
+        );
+        const favProducts = filteredProducts.filter((product) =>
+          userWishlistFromSession.includes(product.id)
+        );
+        console.log("favProducts", favProducts);
+        renderProductGrid(favProducts);
+      });
+    } else {
+      console.log("in else");
+      renderProductGrid(filteredProducts);
+    }
+  } else {
+    alert("No products in wishlist!");
+  }
+});

@@ -174,60 +174,6 @@ nav {
 #favorite-btn:hover {
   color: #ea526f;
 }
-
-/* hamburger menu css */
-#user-menu {
-  position: relative; /* or static if part of navbar */
-}
-
-#hamburger-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #333;
-  padding: 6px 10px;
-  border-radius: 6px;
-}
-
-#hamburger-btn:hover {
-  background-color: #f1f1f1;
-}
-
-#dropdown-menu {
-  position: fixed; /* floating on screen */
-  top: 60px; /* adjust based on navbar height */
-  right: 20px;
-  background: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-  width: 200px;
-  padding: 10px;
-}
-
-#dropdown-menu a {
-  display: block;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-}
-
-#dropdown-menu a:hover {
-  background-color: #f8f9fa;
-}
-
-#dropdown-menu hr {
-  margin: 4px 0;
-  border: 0;
-  border-top: 1px solid #dee2e6;
-}
-
-.hidden {
-  display: none;
-}
-
 /* hamburger menu css */
 #user-menu {
   position: relative; /* or static if part of navbar */
