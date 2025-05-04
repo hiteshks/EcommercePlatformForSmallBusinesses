@@ -6,6 +6,7 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+
 .brand-name {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
@@ -252,7 +253,6 @@ nav {
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin-top: 0;
 }
 
 .carousel-wrapper {

@@ -1,36 +1,126 @@
-# EcommercePlatformForSmallBusinesses
-EcommercePlatformForSmallBusinesses is a web-based e-commerce platform built using HTML, CSS, JavaScript, and Firebase, created to empower small business owners by giving them a simple yet powerful way to sell their products online.
+# EcommercePlatformForSmallBusinesses_Retail
 
-The platform allows vendors to sign up, manage product listings, fulfill orders, create promotions, and customize their own storefronts. At the same time, customers can browse products by category, search and filter items, add to cart, securely checkout, track their orders, and leave product reviews.
+## Introduction
 
-The project aims to provide a complete online selling and buying experience tailored to small businesses, without the need for complex or expensive software.
+My project is called LocalKart, an e-commerce platform made for small businesses. The main purpose of this project is to help local sellers take their business online and reach more customers. Many small vendors don’t have the resources or technical knowledge to create a website or app, so this platform makes it easy for them to list and manage their products without any hassle.
 
-✅ Core Features:
-Role-based authentication for vendors and customers
+On the platform, sellers can log in to their own dashboard where they can add new products, edit existing ones, and even sort or search through their listings. For customers, there’s a user-friendly dashboard where they can browse all available products, search by category or name, add items to a wishlist, and shop by adding products to their cart. Once ready, they can place an order directly from the site.
 
-Vendor dashboard for managing products, stock, and orders
+This project aims to solve the real-world problem of helping small businesses go digital, manage their products easily, and connect with customers who prefer online shopping.
 
-Product listings with images, descriptions, categories, and pricing
+## Project Type
 
-Search, filter, and category-based navigation for customers
+Fullstack
 
-Cart and checkout with order confirmation
+## Deplolyed App
 
-Order history and tracking for customers
+Frontend: https://deployed-site.whatever
+Backend: https://deployed-site.whatever
+Database: https://deployed-site.whatever
 
-Reviews and ratings for purchased products
+## Directory Structure
 
-🚀 Advanced Features (Planned):
-Wishlist functionality and stock alerts
+my-app/
+├─ assets/
+    ├─ icons/
+        ├─ localkart.logo
+    ├─ images/
+        ├─ categories-imgs/
+        ├─ main-banner-imgs/
+├─ auth/
+    ├─ seller/
+        ├─ seller-login.css
+        ├─ seller-login.html
+        ├─ seller-login.js
+        ├─ seller-signup.css
+        ├─ seller-signup.html
+        ├─ seller-signup.js
+    ├─ user/
+        ├─ user-login.css
+        ├─ user-login.html
+        ├─ user-login.js
+        ├─ user-signup.css
+        ├─ user-signup.html
+        ├─ user-signup.js
+├─ firebase/
+    ├─ firebase-config.js
+├─ pages/
+    ├─ seller/
+        ├─ seller-dashboard.css
+        ├─ seller-dashboard.html
+        ├─ seller-dashboard.js
+    ├─ user/
+        ├─ cart.css
+        ├─ cart.html
+        ├─ cart.js
+        ├─ products.css
+        ├─ products.html
+        ├─ products.js
+├─ index.html
+├─ main.js
+├─ README.md
+├─ styles.css
 
-Secure shareable product links with expiry and discounts
 
-Referral tracking and analytics dashboard
+## Video Walkthrough of the project
 
-Vendor-specific shop pages with custom layout
+Attach a very short video walkthough of all of the features [ 1 - 3 minutes ]
 
-Inventory management with low-stock notifications
+## Video Walkthrough of the codebase
 
-AI-powered product recommendations based on behavior
+Attach a very short video walkthough of codebase [ 1 - 5 minutes ]
 
-This project is being developed in phases, starting with the core MVP functionality, and will expand into more dynamic features as development progresses.
+## Features
+
+List out the key features of your application.
+
+- Feature 1
+- Feature 2
+- Feature 3
+
+## design decisions or assumptions
+
+List your design desissions & assumptions
+
+## Installation & Getting started
+
+Detailed instructions on how to install, configure, and get the project running. For BE/FS projects, guide the reviewer how to check mongodb schema etc.
+
+```bash
+npm install my-project
+cd my-project
+npm start
+```
+
+## Usage
+
+Provide instructions and examples on how to use your project.
+
+```bash
+# Example
+```
+
+Include screenshots as necessary.
+
+## Credentials
+
+Provide user credentials for autheticated pages
+
+## APIs Used
+
+If your application relies on external APIs, document them and include any necessary links or references.
+
+## API Endpoints
+
+In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
+GET /api/items - retrieve all items
+POST /api/items - create a new item
+
+## Technology Stack
+
+List and provide a brief overview of the technologies used in the project.
+
+- Node.js
+- Express.js
+- MongoDB
+- Other libraries/modules
