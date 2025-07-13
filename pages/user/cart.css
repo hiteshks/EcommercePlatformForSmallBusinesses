@@ -37,7 +37,16 @@ nav {
   padding: 0px;
 }
 
-.navbar-left > img {
+.logo-link {
+  all: unset;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* removes underline */
+  gap: 0.5rem; /* space between logo and text */
+  cursor: pointer;
+}
+
+.logo-link img {
   width: 32px;
   display: block;
 }

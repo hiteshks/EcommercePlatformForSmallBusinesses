@@ -77,7 +77,7 @@ document.addEventListener("click", function (event) {
   }
 });
 
-window.addEventListener("load", async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const categorySelect = document.querySelector(".category-select");
   const searchInput = document.querySelector(".search-input");
 
@@ -98,16 +98,8 @@ window.addEventListener("load", async () => {
     searchTerm = searchInput.value;
 
     if (!searchTerm.trim()) {
-      // Only reload once if empty
-      if (!sessionStorage.getItem("hasReloaded")) {
-        sessionStorage.setItem("hasReloaded", "true");
-        location.reload();
-        return;
-      } else {
-        sessionStorage.removeItem("hasReloaded");
-        console.warn("Reloaded once already — avoiding infinite reload.");
-        return;
-      }
+      await performSearch(category, searchTerm); // Always perform once, even with empty
+      return;
     }
 
     await performSearch(category, searchTerm);
@@ -475,38 +467,38 @@ function toggleCartButtonColor(hasItems) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  //fetching user wishlist from session storage if available
-  let userWishlistFromSession =
-    JSON.parse(sessionStorage.getItem("userWishlist")) || [];
-  console.log("user wishlist from session storage", userWishlistFromSession);
+// document.addEventListener("DOMContentLoaded", () => {
+//   //fetching user wishlist from session storage if available
+//   let userWishlistFromSession =
+//     JSON.parse(sessionStorage.getItem("userWishlist")) || [];
+//   console.log("user wishlist from session storage", userWishlistFromSession);
 
-  if (userWishlistFromSession) {
-    showFavoritesOnly = true;
-    // Toggle button color
+//   if (userWishlistFromSession) {
+//     showFavoritesOnly = true;
+//     // Toggle button color
 
-    document.getElementById("favorite-btn").style.color = showFavoritesOnly
-      ? "#ea526f"
-      : "";
+//     document.getElementById("favorite-btn").style.color = showFavoritesOnly
+//       ? "#ea526f"
+//       : "";
 
-    // Filter and render products
-    if (showFavoritesOnly) {
-      performSearch("All Categories", "").then(() => {
-        console.log(
-          "filtered products after perforem search",
-          filteredProducts
-        );
-        const favProducts = filteredProducts.filter((product) =>
-          userWishlistFromSession.includes(product.id)
-        );
-        console.log("favProducts", favProducts);
-        renderProductGrid(favProducts);
-      });
-    } else {
-      console.log("in else");
-      renderProductGrid(filteredProducts);
-    }
-  } else {
-    alert("No products in wishlist!");
-  }
-});
+//     // Filter and render products
+//     if (showFavoritesOnly) {
+//       performSearch("All Categories", "").then(() => {
+//         console.log(
+//           "filtered products after perforem search",
+//           filteredProducts
+//         );
+//         const favProducts = filteredProducts.filter((product) =>
+//           userWishlistFromSession.includes(product.id)
+//         );
+//         console.log("favProducts", favProducts);
+//         renderProductGrid(favProducts);
+//       });
+//     } else {
+//       console.log("in else");
+//       renderProductGrid(filteredProducts);
+//     }
+//   } else {
+//     alert("No products in wishlist!");
+//   }
+// });
